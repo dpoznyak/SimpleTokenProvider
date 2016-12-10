@@ -152,6 +152,9 @@ namespace SimpleTokenProvider
         /// </summary>
         /// <param name="date">The date to convert.</param>
         /// <returns>Seconds since Unix epoch.</returns>
-        public static long ToUnixEpochDate(DateTime date) => new DateTimeOffset(date).ToUniversalTime().ToUnixTimeSeconds();
+        public static long ToUnixEpochDate(DateTime date) => (long) (TimeZoneInfo.ConvertTime(date, TimeZoneInfo.Utc) -
+                                                              new DateTime(1970, 1, 1, 0, 0, 0, 0,
+                                                                  System.DateTimeKind.Utc)).TotalSeconds;
+        
     }
 }
