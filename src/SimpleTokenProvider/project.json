@@ -17,7 +17,8 @@
 
       }
     },
-    "net452":  {}  
+    "net452": {},
+    "net46": {} 
   },
   "packOptions": {
     "tags": [ "token", "authentication", "security", "jwt" ]
